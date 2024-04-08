@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market for Lemons Simulation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lemons Market Simulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <button id="simulateRound">Simulate Market Round</button>
+    <div class="box" id="intro">
+        <h2>Market Simulation Introduction</h2>
+        <p>
+            Here is a simulation of the market dynamics described in "The Market for
+            'Lemons': Quality Uncertainty and the Market Mechanism"...
+        </p>
+    </div>
+    <div class="box" id="simulation">
+        <!-- p5.js simulation will be displayed here -->
+    </div>
+    <div class="box" id="parameters">
+        <h2>Adjust Parameters</h2>
+        <div class="slider-container">
+            <label for="marketSize">Market Size: </label>
+            <input type="range" id="marketSize" min="50" max="200" value="100" />
+            <span id="marketSizeValue">100</span>
+        </div>
+        <div class="slider-container">
+            <label for="priceLemons">Price of Lemons: </label>
+            <input type="range" id="priceLemons" min="5" max="30" value="10" />
+            <span id="priceLemonsValue">10</span>
+        </div>
+        <div class="slider-container">
+            <label for="pricePeaches">Price of Peaches: </label>
+            <input type="range" id="pricePeaches" min="10" max="40" value="20" />
+            <span id="pricePeachesValue">20</span>
+        </div>
+        <div class="slider-container">
+            <label for="qualityLemons">Quality of Lemons: </label>
+            <input type="range" id="qualityLemons" min="5" max="25" value="10" />
+            <span id="qualityLemonsValue">10</span>
+        </div>
+        <div class="slider-container">
+            <label for="qualityPeaches">Quality of Peaches: </label>
+            <input type="range" id="qualityPeaches" min="10" max="50" value="30" />
+            <span id="qualityPeachesValue">30</span>
+        </div>
+        <label for="modeSelect">Information Mode:</label>
+        <select id="modeSelect">
+            <option value="symmetric">Symmetric</option>
+            <option value="asymmetric">Asymmetric</option>
+        </select>
+        <div class="slider-container">
+            <button id="toggleSimulation">Start Simulation</button>
+            <button id="resetSimulation" style="margin-left: 10px">Reset</button>
+        </div>
+    </div>
+    <div class="box" id="chart-container">
+        <!-- Add this inside your chart-container div above the canvas -->
+        <div id="priceBox" class="price-box">Consumer Expected Price: </div>
+
+        <canvas id="graph"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
