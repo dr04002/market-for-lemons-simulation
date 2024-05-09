@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lemons Market Simulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="box" id="intro">
-        <h2>Market Simulation Introduction</h2>
+        <h2>Welcome to the Market for Lemons Simulation</h2>
         <p>
-            Here is a simulation of the market dynamics described in "The Market for
-            'Lemons': Quality Uncertainty and the Market Mechanism"...
+            This simulation brings to life the market dynamics described in George Akerlof's seminal paper,
+            "<em>The Market for 'Lemons': Quality Uncertainty and the Market Mechanism</em>."
+            In this market, two types of goods are traded:
+            high-quality "Peaches" and low-quality "Lemons."
+        </p>
+        <p>
+            Buyers and sellers have different information about the quality of these goods,
+            leading to a phenomenon known as "<strong>adverse selection</strong>," where
+            lower-quality goods tend to dominate the market. As a result, higher-quality
+            goods ("Peaches") are driven out, and the overall quality declines.
+        </p>
+        <p>
+            <strong>Explore the Simulation:</strong> Adjust parameters such as market size, prices,
+            quality, and information asymmetry to see how they affect the market outcomes. 
+            Observe the equilibrium price, total goods sold, and the proportion of lemons to peaches.
+        </p>
+        <ul>
+            <li>
+                <strong>Market Size:</strong> Number of buyers and sellers in the market.
+            </li>
+            <li>
+                <strong>Price of Lemons & Peaches:</strong> Prices of low and high-quality goods.
+            </li>
+            <li>
+                <strong>Quality of Lemons & Peaches:</strong> Utility (value) buyers perceive from each good.
+            </li>
+            <li>
+                <strong>Information Mode:</strong> Symmetric (everyone knows the quality) or
+                Asymmetric (only sellers know the quality).
+            </li>
+        </ul>
+        <p>
+            Start the simulation and observe how varying levels of information and
+            quality uncertainty affect the market equilibrium!
         </p>
     </div>
     <div class="box" id="simulation">
@@ -21,29 +51,30 @@
     </div>
     <div class="box" id="parameters">
         <h2>Adjust Parameters</h2>
+        <!-- Sliders for parameters -->
         <div class="slider-container">
             <label for="marketSize">Market Size: </label>
-            <input type="range" id="marketSize" min="50" max="200" value="100" />
+            <input type="range" id="marketSize" min="50" max="200" value="100">
             <span id="marketSizeValue">100</span>
         </div>
         <div class="slider-container">
             <label for="priceLemons">Price of Lemons: </label>
-            <input type="range" id="priceLemons" min="5" max="30" value="10" />
+            <input type="range" id="priceLemons" min="5" max="30" value="10">
             <span id="priceLemonsValue">10</span>
         </div>
         <div class="slider-container">
             <label for="pricePeaches">Price of Peaches: </label>
-            <input type="range" id="pricePeaches" min="10" max="40" value="20" />
+            <input type="range" id="pricePeaches" min="10" max="40" value="20">
             <span id="pricePeachesValue">20</span>
         </div>
         <div class="slider-container">
             <label for="qualityLemons">Quality of Lemons: </label>
-            <input type="range" id="qualityLemons" min="5" max="25" value="10" />
+            <input type="range" id="qualityLemons" min="5" max="25" value="10">
             <span id="qualityLemonsValue">10</span>
         </div>
         <div class="slider-container">
             <label for="qualityPeaches">Quality of Peaches: </label>
-            <input type="range" id="qualityPeaches" min="10" max="50" value="30" />
+            <input type="range" id="qualityPeaches" min="10" max="50" value="30">
             <span id="qualityPeachesValue">30</span>
         </div>
         <label for="modeSelect">Information Mode:</label>
@@ -57,14 +88,12 @@
         </div>
     </div>
     <div class="box" id="chart-container">
-        <!-- Add this inside your chart-container div above the canvas -->
-        <div id="priceBox" class="price-box">Consumer Expected Price: </div>
-
         <canvas id="graph"></canvas>
+        <!-- Chart.js graph will be displayed here -->
     </div>
+    <!-- Load p5.js and Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
